@@ -1,0 +1,208 @@
+/* FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;500&display=swap');
+
+/* CSS RESETS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ROOT VARIABLES */
+:root {
+    /* COLORS */
+    --main: hsl(239, 88%, 40%);
+    --secondary: hsl(19, 94%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --shadows: hsl(0, 0%, 64%);
+    --line: hsl(0, 0%, 88%);
+    --hoverItem: hsla(202, 96%, 52%, 0.199);    
+}
+
+/* COMPONENTS */
+.title {
+    font-size: clamp(28px, 4vw, 4em);
+    font-family: 'Anton', sans-serif;
+    text-transform: capitalize;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    border: 1px solid var(--main);
+    padding: 1em 1em;    
+    border-radius: 0.5em;
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    box-shadow: 0px 3px 3px 1px #e0e0e0;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: var(--main);
+    color: var(--white);
+}
+.btn:active {
+    box-shadow: 0px 1px 1px 0px var(--shadows);
+}
+
+.delete-btn:hover {
+    background-color: var(--main);
+}
+
+input[type="text"] {
+    border: none;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1em;
+    border: 1px solid var(--line);
+}
+input[type="text"]::placeholder {
+    color:var(--line);
+}
+input[type="text"]:focus {
+    border: none;
+    outline: none;
+    border: 1px solid var(--secondary);
+    color:var(--shadows);
+}
+
+.list-item {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.list-item:hover {
+    background-color: var(--hoverItem);
+}
+
+
+/* STYLES */
+
+#main {
+    padding: 2em;
+}
+
+#main #page-header {
+    margin-bottom: 1em;
+}
+
+#main #page-header .page-title {
+    color:var(--main);
+}
+
+.title-span {
+    color: var(--secondary);
+}
+
+#main .form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 2em;
+}
+
+#main .form-fields .menu-btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main .movies-list-title {
+    color:var(--secondary);
+    margin-bottom: 0.25em;
+}
+
+#main .sorting-btn {
+    margin-bottom: 1em;
+}
+
+#main .movie-table-list {
+    /* border: 2px solid red; */
+    margin-bottom: 6em;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0.4em;
+}
+
+#main .movie-table-list .theader-title,
+#main .movie-table-list .theader-rating, 
+#main .movie-table-list .theader-button {
+    padding: 0.5em;
+    font-size: clamp(18px, 3vw, 1.5em);
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+    color: var(--main);
+    cursor: pointer;
+}
+
+#main .movie-table-list .list-item {
+    text-align: end;
+}
+
+#main .movie-table-list .list-item .movie-title,
+#main .movie-table-list .list-item .movie-rating {
+    padding: 0.5em;
+    font-size: clamp(14px, 3vw, 1.2em);
+    text-align: left;
+    width: 20%;
+}
+
+#main .movie-table-list .list-item .movie-rating {
+    text-align: center;
+}    
+
+#main .footer-text {
+    height: 2vh;
+    text-align: center;
+}
+

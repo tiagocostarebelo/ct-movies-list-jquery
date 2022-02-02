@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYMoviesDB | The jQuery Sequel</title>
+    <link rel="stylesheet" href="./style/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main id="main" class="container">
+        <header id="page-header">
+            <h1 id="header-title" class="title page-title">MYMoviesDB | <span class="title-span">The jQuery Sequel</span></h1>
+        </header>
+        <form action="" class="form-fields" autocomplete="off" >
+            <input type="text" class="form-input" placeholder="Movie name">
+            <div class="menu-btns">
+                <button type="submit" class="btn add-btn" value="Add Movie">Add Movie</button>   
+                <!-- <input type="submit" class="btn search-btn" value="Search"> -->
+            </div>     
+        </form>
+        <h2 class="title movies-list-title">Movie Title and Rating</h2>
+        <!-- <div class="sorting-btn">
+            <button type="submit" class="btn sort-list" value="Sort List">Sort List</button>
+            <button type="submit" class="btn sort-za-btn" value="Sort Z-A">Sort Z-A</button> 
+        </div>          -->
+        <table class="movie-table-list">
+            <tr>
+                <th id="title" class="theader-title">Movie Title</th>
+                <th id="rating" class="theader-rating">Movie Rating</th>
+                <th class="theader-button"></th>
+            </tr>
+        </table>   
+        <footer>
+            <p class="text footer-text">Coded by Tiago Costa Rebelo</p>
+        </footer>    
+    </main>
+    
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Movie list created with HTML, CSS and Jquery, where you can add and delete movies and sort them.
