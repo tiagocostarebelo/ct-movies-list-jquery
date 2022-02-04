@@ -165,7 +165,7 @@ input[type="text"]:focus {
     margin-bottom: 1em;
 }
 
-#main .movie-table-list {
+#main .movies-table-list {
     /* border: 2px solid red; */
     margin-bottom: 6em;
     width: 100%;
@@ -173,9 +173,9 @@ input[type="text"]:focus {
     border-spacing: 0.4em;
 }
 
-#main .movie-table-list .theader-title,
-#main .movie-table-list .theader-rating, 
-#main .movie-table-list .theader-button {
+#main .movies-table-list .theader-title,
+#main .movies-table-list .theader-rating, 
+#main .movies-table-list .theader-button {
     padding: 0.5em;
     font-size: clamp(18px, 3vw, 1.5em);
     font-weight: bold;
@@ -185,19 +185,19 @@ input[type="text"]:focus {
     cursor: pointer;
 }
 
-#main .movie-table-list .list-item {
+#main .movies-table-list .list-item {
     text-align: end;
 }
 
-#main .movie-table-list .list-item .movie-title,
-#main .movie-table-list .list-item .movie-rating {
+#main .movies-table-list .list-item .movie-title,
+#main .movies-table-list .list-item .movie-rating {
     padding: 0.5em;
     font-size: clamp(14px, 3vw, 1.2em);
     text-align: left;
     width: 20%;
 }
 
-#main .movie-table-list .list-item .movie-rating {
+#main .movies-table-list .list-item .movie-rating {
     text-align: center;
 }    
 

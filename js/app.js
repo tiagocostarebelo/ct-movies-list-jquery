@@ -43,6 +43,25 @@ let defaultMovies = [
 
 let newMovies = [];
 
+
+// $(document).ready(function() {
+    
+//     // LOAD DEFAULT MOVIES LIST DINAMICALLY
+//     $.each(defaultMovies, function(index, value) {
+//         console.log('Index:', index, 'Value:', value)
+//         $('.movies-table-list').append (
+//             '<tr class="list-item"><td id="title" class="movie-title">'+value.title+'</td><td id="rating" class="movie-rating">'+value.rating+'</td><td><button id='+index+'>Delete</button></td>');
+//         $('td button').addClass('btn');
+//         $('td button').addClass('delete-btn');
+//         $('td button').addClass('movie-item-btn');
+//     })
+
+//     $('.add-btn').click(function() {
+//         console.log()
+//     })
+
+// })
+
 // IMPORTANT SELECTORS
 let table = $('table');
 let addBtn = $('.add-btn');
@@ -52,7 +71,7 @@ let sortRatingList = $('.theader-rating');
 
 
 $(document).ready(function(){
-
+    
     $.each(defaultMovies, loadList);
     $(addBtn).click(addNewMovie);
     $(sortMovieList).click(sortList);
@@ -78,27 +97,26 @@ $(document).ready(function(){
     // ADD NEW TITLE 
     function addNewMovie(event) {
         event.preventDefault();
-        let newTitle = {title: $(inputBox).val(),
+        let newTitle = {
+                        title: $(inputBox).val(),
                         rating: (Math.random(10)*10).toFixed(1)
                     };
         newMovies.push(newTitle);      
         $(inputBox).val('');
-        updateUi(newMovies.index, newTitle.title, newTitle.rating)
-    }
-    
-    
+        updateUi(newMovies.length -1, newTitle.title, newTitle.rating)
+    }     
+
+    // DELETE TITLE
+    $('.delete-btn').click(function() {
+        console.log(this.id)
+    })
 
     // SORT LIST
     function sortList(event) {
+        let newArrSort = [];
         console.log(event.target.id);
         let idListing = $(document).find('td#'+event.target.id+'');
-        idListing.each((index, value) => {
-            console.log(value.innerText);
-            let listArray = idListing.bind(value.innerText);
-    
-        })
-    
-        
+        console.log(idListing)                
     }
 
     
@@ -106,5 +124,5 @@ $(document).ready(function(){
 })
 
 
-// $('p:has(i)').hide();
+// // $('p:has(i)').hide();
 
