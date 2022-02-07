@@ -61,6 +61,7 @@ table {
     --white: hsl(0, 0%, 100%);
     --shadows: hsl(0, 0%, 64%);
     --line: hsl(0, 0%, 88%);
+    --tableHeaders: hsla(224, 87%, 55%, 0.842);    
     --hoverItem: hsla(202, 96%, 52%, 0.199);    
 }
 
@@ -91,8 +92,11 @@ table {
     box-shadow: 0px 1px 1px 0px var(--shadows);
 }
 
+.delete-btn {
+    border: 1px solid var(--secondary);
+}
 .delete-btn:hover {
-    background-color: var(--main);
+    background-color: var(--secondary);
 }
 
 input[type="text"] {
@@ -173,6 +177,11 @@ input[type="text"]:focus {
     border-spacing: 0.4em;
 }
 
+#main .movies-table-list .table-headers {
+    background-color: var(--tableHeaders);
+    
+}
+
 #main .movies-table-list .theader-title,
 #main .movies-table-list .theader-rating, 
 #main .movies-table-list .theader-button {
@@ -181,12 +190,13 @@ input[type="text"]:focus {
     font-weight: bold;
     text-align: center;
     width: 20%;
-    color: var(--main);
+    color: var(--white);
     cursor: pointer;
+    border: 1px solid var(--line);
 }
 
 #main .movies-table-list .list-item {
-    text-align: end;
+    text-align: center;
 }
 
 #main .movies-table-list .list-item .movie-title,

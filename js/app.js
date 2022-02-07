@@ -55,8 +55,8 @@ $(document).ready(function() {
     // ADD MOVIE
     $('.add-btn').click(function(e) {
         e.preventDefault();
-        var userInput = $('.form-input').val();
-        var newTitle = {'title': userInput, 'rating': (Math.random(10)*10).toFixed(1)};
+        let userInput = $('.form-input').val();
+        let newTitle = {'title': userInput, 'rating': (Math.random(10)*10).toFixed(1)};
         newMovies.push(newTitle);
         updateUi(newTitle);
         $('.form-input').val('');
@@ -64,18 +64,50 @@ $(document).ready(function() {
 
     //DELETE MOVIE    
     $('table').on('click', '.delete-btn', function() {
-        var $indexId = this.id;
+        let $indexId = this.id;
         console.log($indexId);
         newMovies.splice($indexId, 1);
-        $('table').html('');
-        $.each(newMovies, function(index, value) {            
-            updateUi(value)
+        console.log(newMovies);
+        newMovies = newMovies;
+        $('.table-body').html('');
+        $.each(newMovies, function(index, value) {
+            $('.table-body').append('<tr class="list-item"><td id="title" class="movie-title">'+value.title+'</td><td id="rating" class="movie-rating">'+value.rating+'</td><td><button id='+index+'>Delete</button></td>');
+            $('td button').addClass('btn');
+            $('td button').addClass('delete-btn');
         })
     })
+
+    // SORT MOVIES    
+    $('th').each(function(column) {
+        $(this).click(function() {
+            let content = $('table').find('tbody > tr');
+            content.sort(function(a, b) {
+                let aValue = $(a).children('td').eq(column).text();
+                let bValue = $(b).children('td').eq(column).text();
+                if(aValue < bValue) {
+                    return -1; 
+                } else if (aValue > bValue) {
+                    return 1;
+                } else {
+                   return;
+                }
+            });
+            $.each(content, function(index, row) {
+                $('tbody').append(row);
+            })
+        })
+    }); 
+
+    // SEARCH BAR
+    
+
+
+   
+    
     
     // UPDATE UI SUPPORT FUNCTION
     function updateUi(value) {
-        $('.movies-table-list').append('<tr class="list-item"><td id="title" class="movie-title">'+value.title+'</td><td id="rating" class="movie-rating">'+value.rating+'</td><td><button id='+(newMovies.length - 1)+'>Delete</button></td>');
+        $('.table-body').append('<tr class="list-item"><td id="title" class="movie-title">'+value.title+'</td><td id="rating" class="movie-rating">'+value.rating+'</td><td><button id='+(newMovies.length - 1)+'>Delete</button></td>');
         $('td button').addClass('btn');
         $('td button').addClass('delete-btn');
     }  
@@ -128,7 +160,7 @@ $(document).ready(function() {
 //     // DELETE TITLE
 //     $('table').on('click', '.delete-btn', function()  {
 //         console.log(this.id)
-//         var idItem = this.id;
+//         let idItem = this.id;
 //     })
 
 //     // SORT LIST
@@ -149,7 +181,7 @@ $(document).ready(function() {
 
 // // // $('p:has(i)').hide();
 
-// // var newArr = $('ul#list li').toArray();
+// // let newArr = $('ul#list li').toArray();
 //             // console.log(newArr)
 //             // $.each(newArr, function(index, value) {
 //             //     console.log(value.innerHTML);
