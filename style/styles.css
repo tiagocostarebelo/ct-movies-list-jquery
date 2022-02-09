@@ -62,7 +62,9 @@ table {
     --shadows: hsl(0, 0%, 64%);
     --line: hsl(0, 0%, 88%);
     --tableHeaders: hsla(224, 87%, 55%, 0.842);    
-    --hoverItem: hsla(202, 96%, 52%, 0.199);    
+    --hoverItem: hsla(202, 96%, 52%, 0.199); 
+    
+    --fs-heading: 2em;
 }
 
 /* COMPONENTS */
@@ -81,7 +83,7 @@ table {
     font-size: 12px;
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
-    box-shadow: 0px 3px 3px 1px #e0e0e0;
+    box-shadow: 0px 3px 3px 1px var(--line);
     cursor: pointer;
 }
 .btn:hover {
